@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html><!--
+        BINGO CHALLENGE!!!
+        Create programmatically (with JS) a BINGO board with 76 cells, from 1 to 76.
+        Create a button to randomize a number from 1 to 76. The same number should be highlighted on the bingo board
+
+        EXTRA: 
+        - Take ALWAYS a new number (eg. avoid randoming the number 10 3 times)
+        - Create a USER BOARD with 24 randomized numbers that highlights as the main board does
+        - Let the user choose HOW MANY user boards he's willing to play with and create them.-->
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    <style>
+    .row {
+      border: 1px solid black;
+    }
+    .cell {
+      border: 1px solid black;
+    }</style>
+  </head>
+  
+  <body>
+    <button id="button">Random Number</buttonid></button>
+    <div id="bingoBoard"></div>
+    <script>
+     
+    function createBoard(){
+        const bingoBoard = document.getElementById("bingoBoard")
+        for(let i=0; i<76; i++) {
+            const cell = document.createElement("div")
+            cell.classList.add('cell')
+            cell.innerText = i+ 1
+            bingoBoard.appendChild(cell)
+
+        }
+    }
+
+    window.onload=function(){
+      createBoard()
+    }
+    
+    let randomNum = Math.floor(Math.random() * 76) + 1
+    let button = document.getElementById("button")
+    //function button.onlick(){}//
+    button.onclick = () =>{
+        button.innerHTML = randomNum
+        
+        // thought of a few different ways to continue and got a bit lost deciding which way was correct
+        
+        // let highlightedNumber = randomNum
+
+        // for(i = 0, i !== randomNum, i++){
+        //   if highlightedNumber === i{
+        //     bingoBoard.background-color = "red";
+        //   }
+        
+        // highlightedNumber.addEventListener("change", function(bingoBoard) {
+        // output.backgroundcolor = "red"}, true);
+
+        /*if highlightednum is equal to [] 
+          hightlight on []bingoboard with css*/
+          //then clear/reset randomNum for next input
+    }
+
+
+
+    </script>
+  </body>
+</html>
